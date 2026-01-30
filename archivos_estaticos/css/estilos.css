@@ -1,0 +1,158 @@
+:root {
+  --bg: #0a0f0d;
+  --bg-gradient: #0d1512;
+  --panel: rgba(16, 185, 129, 0.08);
+  --border: rgba(16, 185, 129, 0.2);
+  --border-hover: rgba(16, 185, 129, 0.4);
+  --text: #e8f5f0;
+  --text-secondary: #a7f3d0;
+  --muted: #6ee7b7;
+  --accent: #10b981;
+  --accent-light: #34d399;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --radius: 16px;
+  
+  /* Colores para badges */
+  --badge-emerald: linear-gradient(135deg, #059669, #10b981);
+  --badge-cyan: linear-gradient(135deg, #0891b2, #06b6d4);
+  --badge-violet: linear-gradient(135deg, #7c3aed, #8b5cf6);
+  --badge-rose: linear-gradient(135deg, #e11d48, #f43f5e);
+  --badge-amber: linear-gradient(135deg, #d97706, #f59e0b);
+  --badge-blue: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(
+      ellipse 1200px 600px at 15% 10%,
+      rgba(16, 185, 129, 0.15),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 800px 500px at 85% 90%,
+      rgba(52, 211, 153, 0.1),
+      transparent 50%
+    ),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-gradient) 100%);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+a:hover::before {
+  opacity: 1;
+}
+
+/* Asignar colores diferentes a cada enlace */
+a:nth-child(6n + 1) {
+  background: var(--badge-emerald);
+  color: white;
+}
+
+a:nth-child(6n + 2) {
+  background: var(--badge-cyan);
+  color: white;
+}
+
+a:nth-child(6n + 3) {
+  background: var(--badge-violet);
+  color: white;
+}
+
+a:nth-child(6n + 4) {
+  background: var(--badge-rose);
+  color: white;
+}
+
+a:nth-child(6n + 5) {
+  background: var(--badge-amber);
+  color: white;
+}
+
+a:nth-child(6n + 6) {
+  background: var(--badge-blue);
+  color: white;
+}
+
+a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+a:active {
+  transform: translateY(0);
+}
+
+.contenedor {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.encabezado {
+  border-bottom: 1px solid var(--border);
+  background: rgba(13, 21, 18, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 16px 0;
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.encabezado h1 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 15px;
+}
+
+main {
+  padding: 32px 0 48px;
+}
+
+.pie {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.muted {
+  color: var(--muted);
+}

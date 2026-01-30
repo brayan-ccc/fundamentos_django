@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block titulo %}django 2026{% endblock  %}
+
+{% block contenido %}
+  <h2>Bienvenido 👋</h2>
+
+  <p>
+    Hoy aprenderás <b>Templates</b>: variables, tags y herencia.
+  </p>
+
+  <p class="muted">
+    Fecha/hora (desde la vista): <b>{{ ahora|date:"d/m/Y H:i" }}</b>
+  </p>
+
+  <h3>Lista de frutas</h3>
+  <p style = "color:red">Variable: {{ variable }}</p>
+  <ol>
+    {% for i in frutas %}
+      <li>{{ i }}</li>
+      {% empty %}
+      <p>No hay registros en esta tabla</p>
+    {% endfor %}
+  </ol>
+  {% comment %}         
+  # estado : ["rechazado", "pendiente", "proceso", "completado"]
+  {% endcomment %}
+  {% if estado == "rechazado" %}
+    <p style = "color:red"> Rechazado</p>
+  {% elif estado == "pendiente" %}
+    <p style = "color:orange"> Pendiente</p>   
+  {% elif estado == "proceso" %}
+    <p style = "color:blue"> Proceso</p>     
+  {% elif estado == "completado" %}
+    <p style = "color:green"> Completado 🦆</p>   
+  {% else %}
+    <p style = "color:pink"> Opción no válida 😡</p>     
+  {% endif %}
+
+{% endblock  %}
