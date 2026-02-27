@@ -11,7 +11,8 @@ SECRET_KEY = os.environ.get(
 )
 
 # En Render, pon DEBUG=False (recomendado).
-DEBUG = os.environ.get("DEBUG", "False") == "True"
+DEBUG = True
+# DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 # Puedes restringir luego con el dominio onrender.com
 ALLOWED_HOSTS = ["*"]
